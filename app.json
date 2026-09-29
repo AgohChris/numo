@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "Numo",
+    "slug": "numo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "numo",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "org.neopy.numo"
+    },
+    "android": {
+      "package": "org.neopy.numo",
+      "adaptiveIcon": {
+        "backgroundColor": "#FAF9F7",
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FAF9F7",
+          "dark": {
+            "backgroundColor": "#14161A"
+          }
+        }
+      ],
+      [
+        "react-native-document-scanner-plugin",
+        {
+          "cameraPermission": "Nous avons besoin de la caméra pour scanner vos documents."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Nous avons besoin d'accéder à vos photos pour créer un document à partir d'images existantes.",
+          "microphonePermission": false
+        }
+      ],
+      "./plugins/withApkSizeOptimizations.js"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
